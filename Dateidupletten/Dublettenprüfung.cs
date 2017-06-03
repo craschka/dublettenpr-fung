@@ -21,18 +21,7 @@ namespace Dateidupletten
 
             var fileinfos = files.Select(x => new VergleichsInfo(x));
 
-            return fileinfos.GroupBy(x => Field(x, modus)).Where(x=>x.Count()>1).Select(x => new Dublette(x.Select(y => y.Pfad)));
-        }
-
-        private static string Field(VergleichsInfo x, Vergleichsmodi modi)
-        {
-            switch (modi)
-            {
-                case Vergleichsmodi.Größe_und_Name:return x.NameUndGröße;
-                case Vergleichsmodi.Größe:return x.Größe.ToString();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(modi), modi, null);
-            }
+            return fileinfos.GroupBy(x => FeldByModus(x, modus)).Where(x=>x.Count()>1).Select(x => new Dublette(x.Select(y => y.Pfad)));
         }
 
         public IEnumerable<IDublette> Prüfe_Kandidaten(IEnumerable<IDublette> kandidaten)
@@ -42,6 +31,17 @@ namespace Dateidupletten
             return kandidaten.Where(x => x.Dateipfade.Select(y => ComputeHash(md5, y)).Distinct().Count() == 1);
         }
 
+        private static string FeldByModus(VergleichsInfo x, Vergleichsmodi modi)
+        {
+            switch (modi)
+            {
+                case Vergleichsmodi.Größe_und_Name:return x.NameUndGröße;
+                case Vergleichsmodi.Größe:return x.Größe.ToString();
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(modi), modi, null);
+            }
+        }
+        
         private static string ComputeHash(MD5 md5, string file)
         {
             using (var stream = File.OpenRead(file))

@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateidupletten", "Dateidupl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateidupletten.Tests", "Dateidupletten.Tests\Dateidupletten.Tests.csproj", "{DE051D0B-09FF-47A1-8B34-96C6B3E3FA89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateidupletten.ConsoleAnwendung", "Dateidupletten.ConsoleAnwendung\Dateidupletten.ConsoleAnwendung.csproj", "{5FF89A6B-0186-4DA2-9FD6-AD8FAA7FCC63}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{DE051D0B-09FF-47A1-8B34-96C6B3E3FA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE051D0B-09FF-47A1-8B34-96C6B3E3FA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE051D0B-09FF-47A1-8B34-96C6B3E3FA89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FF89A6B-0186-4DA2-9FD6-AD8FAA7FCC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FF89A6B-0186-4DA2-9FD6-AD8FAA7FCC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FF89A6B-0186-4DA2-9FD6-AD8FAA7FCC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FF89A6B-0186-4DA2-9FD6-AD8FAA7FCC63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
